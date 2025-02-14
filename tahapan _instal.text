@@ -1,0 +1,3 @@
+CARA BIKIN FRAMERWORK LARAVEL DENGAN CONNECTION MYSQL
+
+Laragon -> Menu -> Quick APP -> Laravel -> Terminal -> cd "name" -> code . -> php artisan migrate
