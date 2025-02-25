@@ -14,15 +14,14 @@
     </div>
     @endif
 
-<a href="{{ route('biodata.create') }}" class="btn btn-dark">Tambah</a>
+<a href="{{ route('user.create') }}" class="btn btn-dark">Tambah</a>
 <div class="mt-4">
 <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th>Nama</th>
-        <th>Tanggal Lahir</th>
-        <th>Umur</th>
-        <th>Gambar</th>
+        <th>Email</th>
+        {{-- <th>Password</th> --}}
         <th>Action</th>
       </tr>
     </thead>
@@ -32,12 +31,12 @@
 
         <tr>
             <td>{{ $value->name }}</td>
-            <td>{{ $value->tanggal_lahir }}</td>
-            <td>{{ $value->umur }}</td>
-            <td><img src="{{  asset($value->image) }}" alt="gambar" width="100px"></td>
+            <td>{{ $value->email }}</td>
+            {{-- <td>{{ $value->password }}</td> --}}
+
             <td>
-                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{  route('biodata.destroy', $value->id) }}" method="POST">
-                    <a href="{{ route('biodata.edit', $value->id) }}" class="btn btn-primary" >EDIT</a>
+                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{  route('user.destroy', $value->id) }}" method="POST">
+                    <a href="{{ route('user.edit', $value->id) }}" class="btn btn-primary" >EDIT</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">HAPUS</button>

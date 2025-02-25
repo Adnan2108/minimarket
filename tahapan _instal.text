@@ -1,3 +1,9 @@
 CARA BIKIN FRAMERWORK LARAVEL DENGAN CONNECTION MYSQL
 
 Laragon -> Menu -> Quick APP -> Laravel -> Terminal -> cd "name" -> code . -> php artisan migrate
+
+make php artisan make:model Biodata -m (membuat model koneksi tabel dan membuat tabel di database)
+
+LOKASI FILE TABLE database
+
+Database -> migrations

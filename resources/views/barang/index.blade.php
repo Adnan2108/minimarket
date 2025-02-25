@@ -14,14 +14,14 @@
     </div>
     @endif
 
-<a href="{{ route('biodata.create') }}" class="btn btn-dark">Tambah</a>
+<a href="{{ route('barang.create') }}" class="btn btn-dark">Tambah</a>
 <div class="mt-4">
 <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th>Nama</th>
-        <th>Tanggal Lahir</th>
-        <th>Umur</th>
+        <th>Supplier</th>
+        <th>Merk</th>
         <th>Gambar</th>
         <th>Action</th>
       </tr>
@@ -31,13 +31,13 @@
         @foreach ( $data as $value )
 
         <tr>
-            <td>{{ $value->name }}</td>
-            <td>{{ $value->tanggal_lahir }}</td>
-            <td>{{ $value->umur }}</td>
+            <td>{{ $value->nama }}</td>
+            <td>{{ $value->supplier }}</td>
+            <td>{{ $value->merk }}</td>
             <td><img src="{{  asset($value->image) }}" alt="gambar" width="100px"></td>
             <td>
-                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{  route('biodata.destroy', $value->id) }}" method="POST">
-                    <a href="{{ route('biodata.edit', $value->id) }}" class="btn btn-primary" >EDIT</a>
+                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{  route('barang.destroy', $value->id) }}" method="POST">
+                    <a href="{{ route('barang.edit', $value->id) }}" class="btn btn-primary" >EDIT</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">HAPUS</button>
